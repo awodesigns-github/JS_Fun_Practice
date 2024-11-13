@@ -1,14 +1,9 @@
 import { describe, test, it, expect } from "vitest";
-import { addb, identity, subb, mulb, minb, add, maxb } from "../Solutions/awodesigns_solutions";
+import { addb, identity, subb, mulb, minb, add, maxb, min, max, addRecurse, mulRecurse } from "../Solutions/awodesigns_solutions";
 
 describe('identity', () => {
     it('should return the argument passed', () => {
-        // Arrange phase
-        const arg = 5;
-        // Act phase
-        const result = identity(arg);
-        // Assert phase
-        expect(result).toBe(5);
+        expect(identity(5)).toBe(5);
     });
 });
 
@@ -45,5 +40,30 @@ describe('maxb', () => {
 describe('add', () => {
     it('should return the sum of all arguments passed', () => {
         expect(add(1, 2, 3, 4, 5)).toBe(15);
+    });
+});
+
+// write a test for min
+describe('min', () => {
+    it('should return the minimum of all arguments', () => {
+        expect(min(4, 3, 2, 0, 5)).toBe(0);
+    });
+})
+
+describe('max', () => {
+    it('should return the maximum of all arguments', () => {
+        expect(max(12, 3, 45, 0, 0, 9)).toBe(45)
+    });
+});
+
+describe('addRecurse', () => {
+    it('should return the sum of all arguments', () => {
+        expect(addRecurse(1, 4, 2, 3, 5)).toBe(15);
+    });
+});
+
+describe('mulRecurse', () => {
+    it('should return the product of all arguments', () => {
+        expect(mulRecurse(1, 3)).toBe(3);
     });
 });
