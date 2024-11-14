@@ -1,5 +1,5 @@
 import { describe, test, it, expect } from "vitest";
-import { addb, identity, subb, mulb, minb, add, maxb, min, max, addRecurse, mulRecurse } from "../Solutions/awodesigns_solutions";
+import { addb, identity, subb, mulb, minb, add, maxb, min, max, addRecurse, mulRecurse, minRecurse, not, maxRecurse } from "../Solutions/awodesigns_solutions";
 
 describe('identity', () => {
     it('should return the argument passed', () => {
@@ -65,5 +65,17 @@ describe('addRecurse', () => {
 describe('mulRecurse', () => {
     it('should return the product of all arguments', () => {
         expect(mulRecurse(1, 3)).toBe(3);
+    });
+});
+
+describe('minRecurse', () => {
+    it('should return the min of all args using recursion', () => {
+        expect(minRecurse(5, 2, 4, 3)).toBe(2);
+    });
+});
+
+describe('maxRecurse', () => {
+    it('should return the min of all args using recursion', () => {
+        expect(maxRecurse(5, 2, 4, 3)).toBe(5);
     });
 });

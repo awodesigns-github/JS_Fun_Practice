@@ -112,6 +112,33 @@ const mulRecurse = (...nums) => {
     return nums.shift() * mulRecurse(...nums);
 }
 
+/**
+ * Returns the minimum of all arguments but uses recursion
+ * @param  {...number} nums 
+ * @returns {number}
+ */
+const minRecurse = (...nums) => {
+    if (nums.length == 1) {
+        return nums[0];
+    } else {
+        if (nums[0] < minRecurse(...nums.slice(1))) return nums[0];
+        return minRecurse(...nums.slice(1));
+    }
+}
+
+/**
+ * Returns the max of the args passed using recursion
+ * @param  {...number} nums 
+ * @returns {number}
+ */
+const maxRecurse = (...nums) => {
+    if (nums.length == 1) {
+        return nums[0]
+    } else {
+        if (nums[0] > maxRecurse(...nums.slice(1))) return nums[0];
+        return maxRecurse(...nums.slice(1));
+    }
+}
 
 module.exports = {
     identity,
@@ -125,4 +152,6 @@ module.exports = {
     max,
     addRecurse,
     mulRecurse,
+    minRecurse,
+    maxRecurse,
 }
